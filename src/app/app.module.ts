@@ -3,10 +3,25 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { MapComponent } from './map/map.component';
+import { Routes } from '@angular/router';
+
+type PathMatch = "full" | "prefix" | undefined;
+const routes:Routes = [
+ 
+  {
+    path: "map",
+    component: MapComponent,
+    data: {
+      title: "Map",
+    },
+  },
+]
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    MapComponent
   ],
   imports: [
     BrowserModule,
@@ -15,4 +30,5 @@ import { AppComponent } from './app.component';
   providers: [],
   bootstrap: [AppComponent]
 })
+
 export class AppModule { }
